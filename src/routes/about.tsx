@@ -5,10 +5,10 @@ import avatar from "@/assets/avatar.png";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Emma Kim" },
-      { name: "description", content: "A bit about Emma Kim — interests, values, and what she's reading." },
-      { property: "og:title", content: "About — Emma Kim" },
-      { property: "og:description", content: "A bit about Emma Kim — interests, values, and what she's reading." },
+      { title: "About — Grace Matsuoka" },
+      { name: "description", content: "A bit about Grace Matsuoka — interests, values, and what she's reading." },
+      { property: "og:title", content: "About — Grace Matsuoka" },
+      { property: "og:description", content: "A bit about Grace Matsuoka — interests, values, and what she's reading." },
     ],
   }),
   component: About,
@@ -21,7 +21,7 @@ function About() {
         <div className="md:col-span-4">
           <img
             src={avatar}
-            alt="Emma Kim portrait"
+            alt="Grace Matsuoka portrait"
             className="w-48 md:w-full h-auto"
           />
         </div>
