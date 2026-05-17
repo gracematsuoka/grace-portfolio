@@ -44,7 +44,7 @@ export const Route = createFileRoute("/projects/$projectId")({
 });
 
 function ProjectPage() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: import("@/lib/projects").Project };
   const idx = projects.findIndex((p) => p.id === project.id);
   const next = projects[(idx + 1) % projects.length];
 
