@@ -1,82 +1,60 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Emma Kim" },
-      { name: "description", content: "Selected computer science projects: web apps, tools, and systems work." },
-      { property: "og:title", content: "Projects — Emma Kim" },
-      { property: "og:description", content: "Selected computer science projects: web apps, tools, and systems work." },
+      { title: "Projects — Grace Matsuoka" },
+      { name: "description", content: "Selected computer science projects by Grace Matsuoka." },
+      { property: "og:title", content: "Projects — Grace Matsuoka" },
+      { property: "og:description", content: "Selected computer science projects by Grace Matsuoka." },
     ],
   }),
   component: Projects,
 });
 
-const projects = [
-  {
-    title: "Lumen",
-    tag: "Web App — TypeScript, Next.js",
-    desc: "A collaborative note-taking tool with end-to-end encryption and real-time sync across devices.",
-    year: "2026",
-  },
-  {
-    title: "Driftc",
-    tag: "Compiler — Rust, LLVM",
-    desc: "A toy systems language with a borrow-checked memory model. Built to learn compiler internals from scratch.",
-    year: "2025",
-  },
-  {
-    title: "Tide",
-    tag: "Open Source — Go",
-    desc: "A tiny CLI for visualizing git branch history. ~600 stars on GitHub. Cross-platform terminal UI.",
-    year: "2025",
-  },
-  {
-    title: "Forager",
-    tag: "Research — Python, PyTorch",
-    desc: "An ML pipeline classifying edible plants from phone photos. Built during my undergraduate research assistantship.",
-    year: "2024",
-  },
-];
-
 function Projects() {
   return (
     <SiteLayout>
-      <section className="py-10">
-        <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-4">
-          02 — Selected work
+      <section className="pt-16 pb-10 max-w-2xl">
+        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+          Projects
         </p>
-        <h1 className="font-serif text-4xl md:text-5xl text-balance max-w-3xl">
-          Things I've <span className="text-primary italic">built</span> and
-          learned from.
+        <h1 className="font-serif text-4xl md:text-5xl text-balance">
+          Things I've built and learned from.
         </h1>
       </section>
 
-      <section className="py-8 divide-y divide-border border-y border-border">
+      <section className="pb-16 grid sm:grid-cols-2 gap-5">
         {projects.map((p) => (
-          <article
-            key={p.title}
-            className="grid md:grid-cols-12 gap-6 py-10 group cursor-pointer"
+          <Link
+            key={p.id}
+            to="/projects/$projectId"
+            params={{ projectId: p.id }}
+            className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_30px_-12px_rgba(48,96,176,0.18)] transition-all"
           >
-            <div className="md:col-span-1 text-[11px] tracking-[0.2em] uppercase text-muted-foreground pt-2">
-              {p.year}
+            <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <img
+                src={p.image}
+                alt={p.title}
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
             </div>
-            <div className="md:col-span-4">
-              <h2 className="font-serif text-3xl md:text-4xl text-primary group-hover:italic transition-all">
-                {p.title}
-              </h2>
-              <p className="mt-2 text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+            <div className="p-5">
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="font-serif text-2xl">{p.title}</h2>
+                <span className="text-xs text-muted-foreground">{p.year}</span>
+              </div>
+              <p className="mt-1 text-xs uppercase tracking-widest text-primary">
                 {p.tag}
               </p>
+              <p className="mt-3 text-sm text-foreground/80 leading-relaxed">
+                {p.blurb}
+              </p>
             </div>
-            <p className="md:col-span-6 md:col-start-7 text-base text-foreground/80 leading-relaxed self-center">
-              {p.desc}
-            </p>
-            <div className="md:col-span-1 self-center text-right text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-              →
-            </div>
-          </article>
+          </Link>
         ))}
       </section>
     </SiteLayout>
