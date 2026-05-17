@@ -12,8 +12,12 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-30 backdrop-blur-md bg-background/70 border-b border-border/60">
         <div className="max-w-5xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
-          <Link to="/" className="font-serif text-xl text-foreground tracking-tight">
-            Grace Matsuoka
+          <Link to="/" className="font-serif text-xl text-foreground tracking-tight text-primary">
+            <b>
+              <i>
+                gm.
+              </i>
+            </b>
           </Link>
           <nav className="flex items-center gap-1 text-sm">
             {nav.map((n) => {
