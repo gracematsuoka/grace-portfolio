@@ -5,10 +5,10 @@ import avatar from "@/assets/avatar.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Emma Kim — Computer Science Portfolio" },
-      { name: "description", content: "Personal portfolio of Emma Kim, a computer science student." },
-      { property: "og:title", content: "Emma Kim — Computer Science Portfolio" },
-      { property: "og:description", content: "Personal portfolio of Emma Kim, a computer science student." },
+      { title: "Grace Matsuoka — Computer Science Portfolio" },
+      { name: "description", content: "Personal portfolio of Grace Matsuoka, a computer science student building thoughtful software." },
+      { property: "og:title", content: "Grace Matsuoka — Computer Science Portfolio" },
+      { property: "og:description", content: "Personal portfolio of Grace Matsuoka, a computer science student building thoughtful software." },
     ],
   }),
   component: Index,
@@ -17,26 +17,33 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <SiteLayout>
-      <section className="max-w-2xl mx-auto pt-20 pb-24 text-center">
+      <section className="pt-24 pb-20 max-w-2xl">
         <img
           src={avatar}
-          alt="Portrait of Emma Kim"
-          className="w-24 h-24 mx-auto mb-10"
+          alt="Portrait of Grace Matsuoka"
+          className="w-20 h-20 mb-8 rounded-full object-cover"
         />
-        <h1 className="font-serif text-3xl md:text-4xl leading-snug text-balance">
-          Hi, I'm Emma — a computer science student
-          interested in <span className="text-primary italic">human-centered software</span>.
+        <h1 className="font-serif text-4xl md:text-5xl leading-[1.15] text-balance">
+          Hi, I'm Grace — a computer science student building{" "}
+          <span className="text-primary">human-centered software</span>.
         </h1>
-        <p className="mt-6 text-base text-muted-foreground leading-relaxed">
-          Currently studying CS, focused on developer tools and interfaces.
+        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          I'm focused on developer tools, interfaces, and the small details
+          that make software feel kind. Currently studying CS at university.
         </p>
-        <div className="mt-10 flex items-center justify-center gap-6 text-sm">
-          <Link to="/projects" className="text-primary hover:underline underline-offset-4">
+        <div className="mt-10 flex items-center gap-3">
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+          >
             View projects
+            <span aria-hidden>→</span>
           </Link>
-          <span className="text-border">/</span>
-          <Link to="/about" className="text-foreground/70 hover:text-primary">
-            About
+          <Link
+            to="/about"
+            className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+          >
+            About me
           </Link>
         </div>
       </section>
