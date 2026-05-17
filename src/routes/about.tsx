@@ -35,7 +35,7 @@ function About() {
           <div className="mt-8 space-y-5 text-base md:text-lg text-foreground/80 leading-relaxed max-w-2xl">
             <p>
               I'm a computer science student who cares about{" "}
-              <span className="marker-highlight">software that respects people</span>
+              <span className="text-primary italic">software that respects people</span>
               . That usually means clear interfaces, fast systems, and code I'd
               be happy to read again in a year.
             </p>
