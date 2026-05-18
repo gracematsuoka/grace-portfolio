@@ -58,14 +58,14 @@ function ProjectPage() {
           ← All projects
         </Link>
 
-        <header className="mt-8 max-w-3xl">
-          <p className="text-xs uppercase tracking-widest text-primary">
+        <header className="mt-8 max-w-2xl">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             {project.tag} · {project.year}
           </p>
-          <h1 className="mt-3 font-serif text-4xl md:text-5xl text-balance">
+          <h1 className="mt-3 font-serif text-3xl md:text-4xl text-balance">
             {project.title}
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
             {project.blurb}
           </p>
         </header>

@@ -17,59 +17,56 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <SiteLayout>
-      <section className="py-10 grid md:grid-cols-12 gap-12">
+      <section className="pt-16 pb-10 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <img
             src={avatar}
             alt="Grace Matsuoka portrait"
-            className="w-48 md:w-full h-auto"
+            className="w-40 md:w-full h-auto rounded-2xl object-cover"
           />
         </div>
         <div className="md:col-span-8">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-4">
-            04 — About
-          </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-balance">
-            A little <span className="text-primary italic">about me.</span>
+          <h1 className="font-serif text-3xl md:text-4xl text-balance">
+            A little <span className="text-primary">about me.</span>
           </h1>
-          <div className="mt-8 space-y-5 text-base md:text-lg text-foreground/80 leading-relaxed max-w-2xl">
+          <div className="mt-6 space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed max-w-xl">
             <p>
-              I'm a computer science student who cares about{" "}
-              <span className="text-primary italic">software that respects people</span>
-              . That usually means clear interfaces, fast systems, and code I'd
+              I'm a computer science student who cares about software that
+              respects people — clear interfaces, fast systems, and code I'd
               be happy to read again in a year.
             </p>
             <p>
               I grew up between Seoul and the Bay Area. I started programming
               by modding video games, which eventually turned into a real
-              interest in compilers, distributed systems, and the human side of
-              interfaces.
+              interest in compilers, distributed systems, and the human side
+              of interfaces.
             </p>
             <p>
               Outside of code, I bake sourdough, take film photos on an old
-              Pentax, and slowly work my way through a list of climbing routes.
+              Pentax, and slowly work my way through a list of climbing
+              routes.
             </p>
           </div>
 
-          <div className="mt-12 grid sm:grid-cols-2 gap-8">
+          <div className="mt-12 grid sm:grid-cols-2 gap-8 max-w-xl">
             <div>
-              <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-3">
                 Reading
               </p>
-              <ul className="font-serif text-xl space-y-1">
+              <ul className="text-sm space-y-1.5 text-foreground/80">
                 <li>The Soul of a New Machine</li>
                 <li>Designing Data-Intensive Apps</li>
                 <li>Bluets — Maggie Nelson</li>
               </ul>
             </div>
             <div>
-              <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-3">
                 Toolbox
               </p>
-              <ul className="font-serif text-xl space-y-1">
+              <ul className="text-sm space-y-1.5 text-foreground/80">
                 <li>Neovim, tmux, fish</li>
                 <li>Figma, Linear, Obsidian</li>
-                <li>A very loved mechanical keyboard</li>
+                <li>A loved mechanical keyboard</li>
               </ul>
             </div>
           </div>

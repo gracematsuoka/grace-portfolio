@@ -17,11 +17,11 @@ export const Route = createFileRoute("/projects/")({
 function Projects() {
   return (
     <SiteLayout>
-      <section className="pt-16 pb-10 max-w-2xl">
-        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+      <section className="pt-16 pb-8 max-w-2xl">
+        <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-3">
           Projects
         </p>
-        <h1 className="font-serif text-4xl md:text-5xl text-balance">
+        <h1 className="font-serif text-3xl md:text-4xl text-balance">
           Things I've built and learned from.
         </h1>
       </section>
@@ -44,13 +44,13 @@ function Projects() {
             </div>
             <div className="p-5">
               <div className="flex items-center justify-between gap-3">
-                <h2 className="font-serif text-2xl">{p.title}</h2>
+                <h2 className="text-base font-medium">{p.title}</h2>
                 <span className="text-xs text-muted-foreground">{p.year}</span>
               </div>
-              <p className="mt-1 text-xs uppercase tracking-widest text-primary">
+              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                 {p.tag}
               </p>
-              <p className="mt-3 text-sm text-foreground/80 leading-relaxed">
+              <p className="mt-3 text-sm text-foreground/75 leading-relaxed">
                 {p.blurb}
               </p>
             </div>
