@@ -58,14 +58,14 @@ function ProjectPage() {
           ← All projects
         </Link>
 
-        <header className="mt-8 max-w-3xl">
-          <p className="text-xs uppercase tracking-widest text-primary">
+        <header className="mt-8 max-w-2xl">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             {project.tag} · {project.year}
           </p>
-          <h1 className="mt-3 font-serif text-4xl md:text-5xl text-balance">
+          <h1 className="mt-3 font-serif text-3xl md:text-4xl text-balance">
             {project.title}
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
             {project.blurb}
           </p>
         </header>
@@ -79,17 +79,17 @@ function ProjectPage() {
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-10 max-w-4xl">
-          <div className="md:col-span-2 space-y-5 text-base leading-relaxed text-foreground/85">
+          <div className="md:col-span-2 space-y-5 text-sm md:text-base leading-relaxed text-foreground/85">
             {project.description.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
           </div>
           <aside className="space-y-6 text-sm">
             <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
                 Stack
               </p>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-foreground/80">
                 {project.stack.map((s) => (
                   <li key={s}>{s}</li>
                 ))}
@@ -97,7 +97,7 @@ function ProjectPage() {
             </div>
             {project.link && (
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
                   Link
                 </p>
                 <a
@@ -110,6 +110,67 @@ function ProjectPage() {
             )}
           </aside>
         </div>
+
+        {project.sections && project.sections.length > 0 && (
+          <div className="mt-16 max-w-3xl space-y-14">
+            {project.sections.map((section, i) => (
+              <section key={i}>
+                <h2 className="font-serif text-2xl md:text-3xl">
+                  {section.heading}
+                </h2>
+                <div className="mt-4 space-y-4 text-sm md:text-base leading-relaxed text-foreground/85">
+                  {section.body.map((para, j) => (
+                    <p key={j}>{para}</p>
+                  ))}
+                </div>
+                {section.image && (
+                  <figure className="mt-6">
+                    <div className="rounded-2xl overflow-hidden border border-border bg-muted">
+                      <img
+                        src={section.image}
+                        alt={section.imageCaption ?? section.heading}
+                        loading="lazy"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    {section.imageCaption && (
+                      <figcaption className="mt-2 text-xs text-muted-foreground">
+                        {section.imageCaption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
+              </section>
+            ))}
+          </div>
+        )}
+
+        {project.gallery && project.gallery.length > 0 && (
+          <div className="mt-16 max-w-4xl">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+              Gallery
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {project.gallery.map((g, i) => (
+                <figure key={i}>
+                  <div className="rounded-2xl overflow-hidden border border-border bg-muted aspect-[4/3]">
+                    <img
+                      src={g.src}
+                      alt={g.caption ?? `${project.title} image ${i + 1}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {g.caption && (
+                    <figcaption className="mt-2 text-xs text-muted-foreground">
+                      {g.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-20 pt-8 border-t border-border flex items-center justify-between">
           <Link to="/projects" className="text-sm text-muted-foreground hover:text-primary">
