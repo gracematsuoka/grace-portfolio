@@ -43,31 +43,31 @@ const roles = [
 function Experience() {
   return (
     <SiteLayout>
-      <section className="pt-16 pb-8 max-w-2xl">
-        <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-3">
-          Experience
+      <section className="py-10">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-4">
+          03 — Experience
         </p>
-        <h1 className="font-serif text-3xl md:text-4xl text-balance">
-          Where I've worked and what I learned there.
+        <h1 className="font-serif text-4xl md:text-5xl text-balance max-w-3xl">
+          Where I've <span className="text-primary italic">worked</span> and
+          what I learned there.
         </h1>
       </section>
 
-      <section className="pb-16 max-w-3xl">
-        <ol className="divide-y divide-border">
+      <section className="py-8 max-w-4xl">
+        <ol className="relative border-l border-border ml-2">
           {roles.map((r) => (
-            <li key={r.company} className="py-6 grid sm:grid-cols-12 gap-3">
-              <p className="sm:col-span-3 text-xs text-muted-foreground pt-1">
+            <li key={r.company} className="pl-8 pb-14 relative">
+              <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-primary" />
+              <p className="text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
                 {r.period}
               </p>
-              <div className="sm:col-span-9">
-                <h2 className="text-base font-medium">
-                  <span className="text-foreground">{r.role}</span>
-                  <span className="text-muted-foreground"> · {r.company}</span>
-                </h2>
-                <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                  {r.desc}
-                </p>
-              </div>
+              <h2 className="mt-2 font-serif text-3xl">
+                <span className="text-primary">{r.role}</span>{" "}
+                <span className="text-foreground/60 italic">@ {r.company}</span>
+              </h2>
+              <p className="mt-3 text-base text-foreground/80 leading-relaxed max-w-2xl">
+                {r.desc}
+              </p>
             </li>
           ))}
         </ol>
