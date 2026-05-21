@@ -1,4 +1,5 @@
-import havenCover from '../assets/project-photos/haven-cover.png';
+import havenCover from '../assets/project-media/sf/haven-cover.png';
+// import sfMap from '../assets/project-media/sf/sf-map.gif';
 
 export type ProjectSection = {
   heading: string;
@@ -29,10 +30,11 @@ export type Project = {
 // Replace `image` URLs with your own (drop files in src/assets and import them).
 export const projects: Project[] = [
   {
-    id: "lumen",
-    title: "Lumen",
-    tag: "Web App",
+    id: "shelter-flow",
+    title: "Shelter Flow",
+    tag: "Mobile App",
     year: "2026",
+    githubRepo: "https://github.com/gracematsuoka/claude-hackathon",
     blurb:
       "A collaborative note-taking tool with end-to-end encryption and real-time sync.",
     description: [
@@ -59,7 +61,7 @@ export const projects: Project[] = [
       },
     ],
     gallery: [
-      { src: "https://picsum.photos/seed/lumen-1/900/700", caption: "Editor view" },
+      // { src: sfMap, caption: "Editor view" },
       { src: "https://picsum.photos/seed/lumen-2/900/700", caption: "Workspace switcher" },
     ],
   },

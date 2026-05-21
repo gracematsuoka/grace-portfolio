@@ -115,9 +115,10 @@ function ProjectPage() {
                 </p>
                 <a
                   href={project.githubRepo}
-                  className="text-primary hover:underline break-all"
+                  className="text-primary hover:underline"
+                  target="_blank" rel="noreferrer"
                 >
-                  {project.githubRepo}
+                  View repository
                 </a>
               </div>
             )}
