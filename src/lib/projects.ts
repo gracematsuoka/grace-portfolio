@@ -1,11 +1,29 @@
 import havenCover from '../assets/project-media/sf/haven-cover.png';
 // import sfMap from '../assets/project-media/sf/sf-map.gif';
 
+export type ProjectPlatform = "web" | "mobile" | "desktop" | "other";
+
+export type ProjectFeature = {
+  /** Optional subheading for this feature. */
+  heading?: string;
+  body: string[];
+  /** Image or video URL. Use .mp4/.webm for video. */
+  media?: string;
+  mediaType?: "image" | "video";
+  mediaCaption?: string;
+  /** Side the media sits on when shown next to text. Defaults to "left". */
+  mediaSide?: "left" | "right";
+  /** Override the media frame aspect ratio. Defaults to the project's platform. */
+  mediaAspect?: "mobile" | "web" | "desktop" | "square";
+};
+
 export type ProjectSection = {
   heading: string;
   body: string[];
   image?: string;
   imageCaption?: string;
+  /** Optional list of features rendered as media + text rows under this section. */
+  features?: ProjectFeature[];
 };
 
 export type Project = {
@@ -14,6 +32,8 @@ export type Project = {
   tag: string;
   year: string;
   blurb: string;
+  /** Form factor — drives default feature media dimensions (mobile = iPhone-ish, etc.). */
+  platform?: ProjectPlatform;
   /** Intro paragraphs shown at the top of the detail page. */
   description: string[];
   /** Main cover image (also used on the projects card). */
@@ -54,10 +74,27 @@ export const projects: Project[] = [
         heading: "How it works",
         body: [
           "Each workspace generates a symmetric key on the client. Documents are encrypted before they leave the browser, and the relay server only stores opaque blobs.",
-          "Real-time collaboration uses a Yjs document tree with a custom presence layer that piggybacks on the same encrypted channel.",
         ],
-        image: "https://picsum.photos/seed/lumen-arch/1200/700",
-        imageCaption: "Architecture sketch from an early design doc.",
+        features: [
+          {
+            heading: "End-to-end encryption",
+            body: [
+              "All notes are encrypted in the browser with a per-workspace key. The server only ever sees opaque blobs.",
+            ],
+            media: "https://picsum.photos/seed/lumen-e2e/900/700",
+            mediaType: "image",
+            mediaSide: "left",
+          },
+          {
+            heading: "Real-time sync",
+            body: [
+              "A Yjs CRDT keeps every collaborator in sync, with a custom presence layer piggybacking on the same encrypted channel.",
+            ],
+            media: "https://picsum.photos/seed/lumen-sync/900/700",
+            mediaType: "image",
+            mediaSide: "right",
+          },
+        ],
       },
     ],
     gallery: [
