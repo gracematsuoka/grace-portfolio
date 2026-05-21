@@ -1,6 +1,18 @@
 import { Link, useLocation } from "@tanstack/react-router";
 
-export function SiteLayout({ children }: { children: React.ReactNode }) {
+type SiteLayoutProps = {
+  children: React.ReactNode;
+  contentClassName?: string;
+  footerClassName?: string;
+  mainClassName?: string;
+};
+
+export function SiteLayout({
+  children,
+  contentClassName,
+  footerClassName,
+  mainClassName,
+}: SiteLayoutProps) {
   const { pathname } = useLocation();
   const nav = [
     { to: "/projects", label: "Projects" },
@@ -38,16 +50,18 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
       </header>
-      <main className="flex-1 w-full">
-        <div className="max-w-5xl mx-auto px-6 md:px-8">{children}</div>
+      <main className={`flex-1 w-full ${mainClassName ?? ""}`.trim()}>
+        <div className={`max-w-5xl mx-auto px-6 md:px-8 ${contentClassName ?? ""}`.trim()}>
+          {children}
+        </div>
       </main>
-      <footer className="mt-24 border-t border-border/60">
+      <footer className={`mt-24 border-t border-border/60 ${footerClassName ?? ""}`.trim()}>
         <div className="max-w-5xl mx-auto px-6 md:px-8 py-8 flex items-center justify-between text-sm text-muted-foreground">
           <span>© 2026 Grace Matsuoka</span>
           <div className="flex gap-5">
-            <a href="https://github.com" className="hover:text-primary">GitHub</a>
-            <a href="https://linkedin.com" className="hover:text-primary">LinkedIn</a>
-            <a href="mailto:hello@example.com" className="hover:text-primary">Email</a>
+            <a href="https://github.com/gracematsuoka" target="_blank" rel="noreferrer" className="hover:text-primary">GitHub</a>
+            <a href="https://www.linkedin.com/in/grace-matsuoka/" target="_blank" rel="noreferrer" className="hover:text-primary">LinkedIn</a>
+            <a href="mailto:gracelmatsuoka@gmail.com" className="hover:text-primary">Email</a>
           </div>
         </div>
       </footer>

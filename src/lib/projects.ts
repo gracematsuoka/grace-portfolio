@@ -1,3 +1,5 @@
+import havenCover from '../assets/project-photos/haven-cover.png';
+
 export type ProjectSection = {
   heading: string;
   body: string[];
@@ -36,7 +38,7 @@ export const projects: Project[] = [
       "Lumen is a small, fast notes app I built to learn CRDTs and end-to-end encryption.",
       "Notes are encrypted on the client with a per-workspace key, then synced through a thin relay server that never sees plaintext.",
     ],
-    image: "https://picsum.photos/seed/lumen/1200/800",
+    image: havenCover,
     stack: ["TypeScript", "Next.js", "Yjs", "Postgres"],
     sections: [
       {

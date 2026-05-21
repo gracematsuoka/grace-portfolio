@@ -19,7 +19,7 @@ function Projects() {
     <SiteLayout>
       <section className="pt-16 pb-10 max-w-2xl text-center mx-auto">
         <h1 className="font-serif text-3xl md:text-4xl text-balance">
-          Things I've built and learned from.
+          Things I've <span className="text-primary italic">built.</span>
         </h1>
         <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto">
           A selection of projects across compilers, developer tools, and
@@ -33,7 +33,7 @@ function Projects() {
             key={p.id}
             to="/projects/$projectId"
             params={{ projectId: p.id }}
-            className="group rounded-3xl bg-card border border-border/80 overflow-hidden flex flex-col hover:shadow-[0_12px_40px_-18px_rgba(48,96,176,0.25)] hover:-translate-y-0.5 transition-all"
+            className="group rounded-3xl bg-card border border-border/80 overflow-hidden flex flex-col hover:shadow-[0_12px_40px_-18px_rgba(222,101,54,0.28)] hover:-translate-y-0.5 transition-all"
           >
             <div className="flex items-center justify-between gap-3 px-5 pt-5 pb-4">
               <div className="min-w-0">
@@ -51,7 +51,7 @@ function Projects() {
                 src={p.image}
                 alt={p.title}
                 loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-[1.] transition-transform duration-500"
               />
             </div>
             <p className="px-5 pb-5 text-sm text-foreground/75 leading-relaxed">

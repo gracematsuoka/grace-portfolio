@@ -45,7 +45,7 @@
   --popover: oklch(0.99 0.005 80);
   --popover-foreground: oklch(0.22 0.02 260);
   /* Primary #3060B0 */
-  --primary: oklch(0.45 0.13 263);
+  --primary: #DE6536;
   --primary-foreground: oklch(0.99 0.005 80);
   --secondary: oklch(0.94 0.013 75);
   --secondary-foreground: oklch(0.22 0.02 260);
@@ -55,11 +55,11 @@
   --accent-foreground: oklch(0.22 0.02 260);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.005 80);
-  --border: oklch(0.88 0.012 70);
-  --input: oklch(0.88 0.012 70);
-  --ring: oklch(0.45 0.13 263);
-  --highlight: oklch(0.45 0.13 263);
-  --highlight-foreground: oklch(0.985 0.012 80);
+  --border: #d9c8ab;
+  --input: #d9c8ab;
+  --ring: #c9784d;
+  --highlight: #c9784d;
+  --highlight-foreground: #fff8f1;
 }
 
 @layer base {
@@ -67,7 +67,8 @@
     border-color: var(--color-border);
   }
 
-  html, body {
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -76,7 +77,10 @@
 }
 
 @layer utilities {
-  .text-balance { text-wrap: balance; }
+  .text-balance {
+    text-wrap: balance;
+  }
+
   .marker-highlight {
     background-color: var(--color-highlight);
     color: var(--color-highlight-foreground);

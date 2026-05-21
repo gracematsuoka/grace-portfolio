@@ -11,12 +11,12 @@ export const Route = createFileRoute("/projects/$projectId")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.project.title} — Grace Matsuoka` },
-          { name: "description", content: loaderData.project.blurb },
-          { property: "og:title", content: `${loaderData.project.title} — Grace Matsuoka` },
-          { property: "og:description", content: loaderData.project.blurb },
-          { property: "og:image", content: loaderData.project.image },
-        ]
+        { title: `${loaderData.project.title} — Grace Matsuoka` },
+        { name: "description", content: loaderData.project.blurb },
+        { property: "og:title", content: `${loaderData.project.title} — Grace Matsuoka` },
+        { property: "og:description", content: loaderData.project.blurb },
+        { property: "og:image", content: loaderData.project.image },
+      ]
       : [],
   }),
   notFoundComponent: () => (
@@ -70,7 +70,7 @@ function ProjectPage() {
           </p>
         </header>
 
-        <div className="mt-10 rounded-2xl overflow-hidden border border-border bg-muted aspect-[16/9]">
+        <div className="mt-10 max-w-4xl rounded-2xl overflow-hidden border border-border bg-muted aspect-[16/4] md:aspect-[16/5]">
           <img
             src={project.image}
             alt={project.title}
