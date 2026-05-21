@@ -1,5 +1,7 @@
 import havenCover from '../assets/project-photos/haven-cover.png';
 
+export type ProjectPlatform = "web" | "mobile" | "desktop" | "other";
+
 export type ProjectFeature = {
   /** Optional subheading for this feature. */
   heading?: string;
@@ -10,6 +12,8 @@ export type ProjectFeature = {
   mediaCaption?: string;
   /** Side the media sits on when shown next to text. Defaults to "left". */
   mediaSide?: "left" | "right";
+  /** Override the media frame aspect ratio. Defaults to the project's platform. */
+  mediaAspect?: "mobile" | "web" | "desktop" | "square";
 };
 
 export type ProjectSection = {
@@ -27,6 +31,8 @@ export type Project = {
   tag: string;
   year: string;
   blurb: string;
+  /** Form factor — drives default feature media dimensions (mobile = iPhone-ish, etc.). */
+  platform?: ProjectPlatform;
   /** Intro paragraphs shown at the top of the detail page. */
   description: string[];
   /** Main cover image (also used on the projects card). */
