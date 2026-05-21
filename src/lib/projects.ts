@@ -17,6 +17,7 @@ export type Project = {
   image: string;
   stack: string[];
   link?: string;
+  githubRepo?: string;
   /** Optional extra sections rendered after the intro — each can include a subheader, paragraphs, and an image. */
   sections?: ProjectSection[];
   /** Optional gallery of additional images shown at the bottom of the detail page. */
