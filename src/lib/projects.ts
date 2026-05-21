@@ -66,10 +66,27 @@ export const projects: Project[] = [
         heading: "How it works",
         body: [
           "Each workspace generates a symmetric key on the client. Documents are encrypted before they leave the browser, and the relay server only stores opaque blobs.",
-          "Real-time collaboration uses a Yjs document tree with a custom presence layer that piggybacks on the same encrypted channel.",
         ],
-        image: "https://picsum.photos/seed/lumen-arch/1200/700",
-        imageCaption: "Architecture sketch from an early design doc.",
+        features: [
+          {
+            heading: "End-to-end encryption",
+            body: [
+              "All notes are encrypted in the browser with a per-workspace key. The server only ever sees opaque blobs.",
+            ],
+            media: "https://picsum.photos/seed/lumen-e2e/900/700",
+            mediaType: "image",
+            mediaSide: "left",
+          },
+          {
+            heading: "Real-time sync",
+            body: [
+              "A Yjs CRDT keeps every collaborator in sync, with a custom presence layer piggybacking on the same encrypted channel.",
+            ],
+            media: "https://picsum.photos/seed/lumen-sync/900/700",
+            mediaType: "image",
+            mediaSide: "right",
+          },
+        ],
       },
     ],
     gallery: [
