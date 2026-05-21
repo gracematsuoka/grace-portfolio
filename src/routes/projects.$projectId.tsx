@@ -108,6 +108,19 @@ function ProjectPage() {
                 </a>
               </div>
             )}
+            {project.githubRepo && (
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                  GitHub
+                </p>
+                <a
+                  href={project.githubRepo}
+                  className="text-primary hover:underline break-all"
+                >
+                  {project.githubRepo}
+                </a>
+              </div>
+            )}
           </aside>
         </div>
 
