@@ -1,10 +1,24 @@
 import havenCover from '../assets/project-photos/haven-cover.png';
 
+export type ProjectFeature = {
+  /** Optional subheading for this feature. */
+  heading?: string;
+  body: string[];
+  /** Image or video URL. Use .mp4/.webm for video. */
+  media?: string;
+  mediaType?: "image" | "video";
+  mediaCaption?: string;
+  /** Side the media sits on when shown next to text. Defaults to "left". */
+  mediaSide?: "left" | "right";
+};
+
 export type ProjectSection = {
   heading: string;
   body: string[];
   image?: string;
   imageCaption?: string;
+  /** Optional list of features rendered as media + text rows under this section. */
+  features?: ProjectFeature[];
 };
 
 export type Project = {
