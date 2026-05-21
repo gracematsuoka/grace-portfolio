@@ -157,9 +157,24 @@ function ProjectPage() {
                   <div className="mt-10 space-y-12">
                     {section.features.map((feature, k) => {
                       const side = feature.mediaSide ?? "left";
+                      const aspect =
+                        feature.mediaAspect ??
+                        (project.platform === "mobile"
+                          ? "mobile"
+                          : project.platform === "desktop"
+                            ? "desktop"
+                            : "web");
+                      const frameClass =
+                        aspect === "mobile"
+                          ? "aspect-[9/19] max-w-[260px] mx-auto rounded-[2rem]"
+                          : aspect === "desktop"
+                            ? "aspect-[16/10] rounded-2xl"
+                            : aspect === "square"
+                              ? "aspect-square rounded-2xl"
+                              : "aspect-[16/10] rounded-2xl";
                       const mediaEl = feature.media && (
                         <figure>
-                          <div className="rounded-2xl overflow-hidden border border-border bg-muted aspect-[4/3]">
+                          <div className={`overflow-hidden border border-border bg-muted ${frameClass}`}>
                             {feature.mediaType === "video" ? (
                               <video
                                 src={feature.media}
