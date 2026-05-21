@@ -153,6 +153,75 @@ function ProjectPage() {
                     )}
                   </figure>
                 )}
+                {section.features && section.features.length > 0 && (
+                  <div className="mt-10 space-y-12">
+                    {section.features.map((feature, k) => {
+                      const side = feature.mediaSide ?? "left";
+                      const mediaEl = feature.media && (
+                        <figure>
+                          <div className="rounded-2xl overflow-hidden border border-border bg-muted aspect-[4/3]">
+                            {feature.mediaType === "video" ? (
+                              <video
+                                src={feature.media}
+                                controls
+                                playsInline
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <img
+                                src={feature.media}
+                                alt={feature.mediaCaption ?? feature.heading ?? "Feature"}
+                                loading="lazy"
+                                className="w-full h-full object-cover"
+                              />
+                            )}
+                          </div>
+                          {feature.mediaCaption && (
+                            <figcaption className="mt-2 text-xs text-muted-foreground">
+                              {feature.mediaCaption}
+                            </figcaption>
+                          )}
+                        </figure>
+                      );
+                      const textEl = (
+                        <div>
+                          {feature.heading && (
+                            <h3 className="font-serif text-xl md:text-2xl">
+                              {feature.heading}
+                            </h3>
+                          )}
+                          <div className="mt-3 space-y-3 text-sm md:text-base leading-relaxed text-foreground/85">
+                            {feature.body.map((para, m) => (
+                              <p key={m}>{para}</p>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                      return (
+                        <div
+                          key={k}
+                          className="grid md:grid-cols-2 gap-6 md:gap-10 items-center"
+                        >
+                          {feature.media ? (
+                            side === "right" ? (
+                              <>
+                                {textEl}
+                                {mediaEl}
+                              </>
+                            ) : (
+                              <>
+                                {mediaEl}
+                                {textEl}
+                              </>
+                            )
+                          ) : (
+                            <div className="md:col-span-2">{textEl}</div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </section>
             ))}
           </div>
