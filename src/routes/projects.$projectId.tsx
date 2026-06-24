@@ -167,9 +167,9 @@ function ProjectPage() {
                             : "web");
                       const frameClass =
                         aspect === "mobile"
-                          ? "aspect-[9/19] max-w-[260px] mx-auto rounded-[2rem]"
+                          ? "aspect-[9/19] max-w-[260px] mx-auto rounded-[2.9rem]"
                           : aspect === "desktop"
-                            ? "aspect-[16/10] rounded-2xl"
+                            ? "aspect-[16/9] rounded-2xl"
                             : aspect === "square"
                               ? "aspect-square rounded-2xl"
                               : "aspect-[16/10] rounded-2xl";
@@ -179,9 +179,12 @@ function ProjectPage() {
                             {feature.mediaType === "video" ? (
                               <video
                                 src={feature.media}
+                                autoPlay
+                                loop
                                 controls
                                 playsInline
                                 className="w-full h-full object-cover"
+                                muted
                               />
                             ) : (
                               <img

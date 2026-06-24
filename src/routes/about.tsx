@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import avatar from "@/assets/avatar.png";
+import headshot from '../assets/headshot.jpg';
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -18,11 +18,11 @@ function About() {
   return (
     <SiteLayout>
       <section className="pt-16 pb-10 grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-4">
+        <div className="md:col-span-3">
           <img
-            src={avatar}
+            src={headshot}
             alt="Grace Matsuoka portrait"
-            className="w-40 md:w-full h-auto rounded-2xl object-cover"
+            className="w-30 md:w-full h-auto rounded-2xl object-cover"
           />
         </div>
         <div className="md:col-span-8">
@@ -31,15 +31,10 @@ function About() {
           </h1>
           <div className="mt-6 space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed max-w-xl">
             <p>
-              I'm a computer science student who cares about software that
-              respects people — clear interfaces, fast systems, and code I'd
-              be happy to read again in a year.
+              I'm a computer science student who wants to build technology that leaves a positive footprint for future generations.
             </p>
             <p>
-              I grew up between Seoul and the Bay Area. I started programming
-              by modding video games, which eventually turned into a real
-              interest in compilers, distributed systems, and the human side
-              of interfaces.
+              I grew up in Washington state and
             </p>
             <p>
               Outside of code, I bake sourdough, take film photos on an old
