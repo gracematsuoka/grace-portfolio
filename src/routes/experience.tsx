@@ -18,43 +18,50 @@ const roles = [
     company: "HENNGE",
     role: "SWE Intern",
     period: "Summer 2026",
-    desc: "Worked on the multiplayer infrastructure team. Shipped a presence-system rewrite that cut idle bandwidth by 40%.",
+    location: "Tokyo, Japan",
+    desc: "Designed an automated recruitment pipeline with Brevo that cut a 3-4 hour manual task to one click and boosted submission rates by 5%; built an end-to-end CI/CD pipeline (Docker, Terraform, GitHub Actions) to containerize and deploy a FastAPI app to AWS.",
   },
   {
     company: "Cornell Apparel Design Lab",
     role: "Research Assistant",
     period: "Spring 2026 — Present",
-    desc: "Co-authoring a paper on adaptive interfaces for assistive technology. Built study tooling in React Native.",
+    location: "Ithaca, NY",
+    desc: "Helping process data for performance enhansive shoe insole research under Professor Heeju Park.",
   },
   {
     company: "Widget Factory",
     role: "Problem Design Engineer",
-    period: "Spring 2026 — Present",
-    desc: "Co-authoring a paper on adaptive interfaces for assistive technology. Built study tooling in React Native.",
+    period: "Spring 2026",
+    location: "Remote",
+    desc: "Evaluated AI-generated code and failure cases for RL training pipelines, identifying ambiguity and inconsistencies, and providing technical justification to improve dataset quality.",
   },
   {
     company: "Hack4Impact",
     role: "Technical Lead",
     period: "Spring 2025 — Present",
-    desc: "Co-authoring a paper on adaptive interfaces for assistive technology. Built study tooling in React Native.",
+    location: "Ithaca, NY",
+    desc: "Led a 13-person cross-functional team building a health resource platform, and built calendar and Microsoft Graph API integrations for hybrid scheduling used by 30k+ patients and staff at Ithaca Recovery.",
   },
   {
     company: "CampusCares",
     role: "Chief of Technical Operations",
     period: "2025 — 2026",
-    desc: "Backend work on the payments reliability team. Wrote idempotency tests and migrated a legacy job runner.",
+    location: "Ithaca, NY",
+    desc: "Co-developed a volunteering discovery platform used by 400+ Cornell students and 30+ campus groups, including a Cloudflare Workers-based carpool system that automated event coordination and reminders.",
   },
   {
     company: "Left Field",
     role: "SWE Intern",
     period: "Fall 2025",
-    desc: "Led weekly sections of 30 students, held office hours, and rewrote three programming assignments.",
+    location: "Remote",
+    desc: "Rebuilt the app's UI in React Native from Figma designs alongside the CTO, and built backend routes for user profiles/activities while fixing a critical auth middleware gap.",
   },
   {
     company: "Jane Street",
     role: "AMP Scholar",
     period: "Summer 2024",
-    desc: "Led weekly sections of 30 students, held office hours, and rewrote three programming assignments.",
+    location: "NYC, NY",
+    desc: "Accelerated knowledge in combinatorics, number theory, and advanced CS, and devised a trading algorithm that generated thousands in profit in a simulated market competition.",
   },
 ];
 
@@ -77,7 +84,7 @@ function Experience() {
             <li key={r.company} className="pl-8 pb-14 relative">
               <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-primary" />
               <p className="text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-                {r.period}
+                {r.period} &middot; {r.location}
               </p>
               <h2 className="mt-2 font-serif text-2xl">
                 <span className="text-primary">{r.role}</span>{" "}

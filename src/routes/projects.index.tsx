@@ -22,8 +22,7 @@ function Projects() {
           Things I've <span className="text-primary italic">built.</span>
         </h1>
         <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto">
-          A selection of projects across compilers, developer tools, and
-          human-centered software.
+          A selection of projects across mobile apps, websites and ...
         </p>
       </section>
 

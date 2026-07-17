@@ -10,6 +10,7 @@ import lcCover from '../assets/project-media/lc/lc-cover.png';
 import lcForm from '../assets/project-media/lc/lc-form.png';
 import lcResult from '../assets/project-media/lc/lc-result.png';
 import foundCover from '../assets/project-media/found/found-cover.png';
+import foundApp from '../assets/project-media/found/found-app.png';
 
 export type ProjectPlatform = "web" | "mobile" | "desktop" | "other";
 
@@ -117,10 +118,11 @@ export const projects: Project[] = [
     tag: "Web Application",
     year: "2025",
     blurb:
-      "A social media and creative application for users who want to digitize their closet, share their creativity with others, or seek inspiration..",
+      "A social media and creative application for users who want to digitize their closet, share their creativity with others, or seek inspiration.",
     description: [
       "I built this application to create a social media platform specifically for those who love fashion or want to seek styling help and to challenge myself to build a full-stack project from the ground up with a hybrid architecture between a Dockerized Flask microservice for AI image processing and a MERN tech stack for the core plateform",
     ],
+    githubRepo: "https://github.com/gracematsuoka/PIQUE",
     image: piqueCover,
     stack: ["React", "Node.js", "Express.js", "MongoDB", "Python Microservice (Flask)"],
     sections: [
@@ -183,32 +185,27 @@ export const projects: Project[] = [
   {
     id: "lifecrash",
     title: "LifeCrash",
-    tag: "Open Source",
+    tag: "Prediction Tool",
     year: "2025",
     blurb:
-      "A tiny CLI for visualizing git branch history in your terminal.",
+      'Using real user data to predict your next "life crash".',
     description: [
-      "Tide renders a clean, interactive view of git branches and commits using a custom TUI built on top of crossterm.",
-      "It started as a weekend project and now has ~600 stars on GitHub, with contributors from four countries.",
+      "LifeCrash uses a Random Forest Model to process past data sets regarding people's different life choices (education, career, etc.) with their life outcomes.",
     ],
+    githubRepo: "https://github.com/gracematsuoka/LifeCrash",
     image: lcCover,
-    stack: ["Go", "Crossterm", "Git"], sections: [
+    stack: ["Python"],
+    sections: [
       {
         heading: "The problem",
         body: [
-          "Most collaborative editors trade privacy for convenience. I wanted to see how close I could get to a Notion-like experience without the server ever seeing user content.",
-        ],
-      },
-      {
-        heading: "How it works",
-        body: [
-          "Each workspace generates a symmetric key on the client. Documents are encrypted before they leave the browser, and the relay server only stores opaque blobs.",
+          'Most people will experience burnout or a "life crash" at least once in their life, LifeCrash uses real-time data to predict when a "life crash" might happen based off of their current lifestyle.',
         ],
         features: [
           {
-            heading: "Real-time sync",
+            heading: "Data collection",
             body: [
-              "A Yjs CRDT keeps every collaborator in sync, with a custom presence layer piggybacking on the same encrypted channel.",
+              "A user fills out a form, answering questions about their current lifestyle from education background to fitness levels.",
             ],
             media: lcForm,
             mediaType: "image",
@@ -216,9 +213,9 @@ export const projects: Project[] = [
             mediaAspect: "desktop"
           },
           {
-            heading: "End-to-end encryption",
+            heading: "Accurate predication",
             body: [
-              "All notes are encrypted in the browser with a per-workspace key. The server only ever sees opaque blobs.",
+              "The tool displays the user's predicted age at which they will experience burnout and the intensity of it. AI-generated steps to take to prevent their crisis are also listed to help the user avoid a crash.",
             ],
             media: lcResult,
             mediaType: "image",
@@ -232,16 +229,36 @@ export const projects: Project[] = [
   {
     id: "found",
     title: "Found",
-    tag: "Research",
+    tag: "Mobile App",
     year: "2024",
+    githubRepo: "https://github.com/Scott-Fukuda/Found-Backend-App",
     blurb:
-      "An ML pipeline that classifies edible plants from phone photos.",
+      "A virtual lost and found, allowing users to securely find and post items that have been misplaced.",
     description: [
-      "Forager is a research project from my undergraduate lab. We trained a vision model on a curated dataset of foraged plants and deployed it as a mobile-friendly web app.",
-      "My focus was on the data pipeline — collection, labeling tooling, and active-learning loops to improve hard classes.",
+      "This app was created for a hackathon where I contributed as a backend developer. Through this project we wanted to address a real problem that we have experienced on campus.",
     ],
     image: foundCover,
-    stack: ["Python", "PyTorch", "FastAPI"],
+    stack: ["Python"],
+    sections: [
+      {
+        heading: "The problem",
+        body: [
+          "Everyday students lose items on campus and it can take time for items to reach the campus lost and found and for students to find which lost and found has their item. Found makes retrieving and finding misplaced items easy and secure.",
+        ],
+        features: [
+          {
+            heading: "Virtual lost and found",
+            body: [
+              "Users fill out a form for items they've found, filling out information such as images, location, description, and contact information. When a user loses an item they will first breifly describe the lost item such as the color and location and a list of relevant items will be returned, ensuring users only access items that are relevant to them.",
+            ],
+            media: foundApp,
+            mediaType: "image",
+            mediaSide: "left",
+            mediaAspect: "mobile"
+          },
+        ],
+      },
+    ],
   },
 ];
 

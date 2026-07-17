@@ -34,24 +34,24 @@ function About() {
               I'm a computer science student who wants to build technology that leaves a positive footprint for future generations.
             </p>
             <p>
-              I grew up in Washington state and
+              I grew up in Washington state, surrounded by beautiful mountains and forests. I've always loved playing with little gadgets and being creative which fueled my passion for computer science.
+              I became intrigued by the ability to be able to create whatever I wanted through a mere screen and wanted to test how much I could create with code. I hope that through the software build,
+              I can help contribute to building a world we all want to live in.
             </p>
             <p>
-              Outside of code, I bake sourdough, take film photos on an old
-              Pentax, and slowly work my way through a list of climbing
-              routes.
+              Outside of code, I love running, making Japanese curry, and exploring different cultures and places.
             </p>
           </div>
 
           <div className="mt-12 grid sm:grid-cols-2 gap-8 max-w-xl">
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-3">
-                Reading
+                Hobbies
               </p>
               <ul className="text-sm space-y-1.5 text-foreground/80">
-                <li>The Soul of a New Machine</li>
-                <li>Designing Data-Intensive Apps</li>
-                <li>Bluets — Maggie Nelson</li>
+                <li>Cooking</li>
+                <li>Running</li>
+                <li>Language learning</li>
               </ul>
             </div>
             <div>
@@ -59,9 +59,9 @@ function About() {
                 Toolbox
               </p>
               <ul className="text-sm space-y-1.5 text-foreground/80">
-                <li>Neovim, tmux, fish</li>
-                <li>Figma, Linear, Obsidian</li>
-                <li>A loved mechanical keyboard</li>
+                <li>Airpods and a good playlist</li>
+                <li>Green tea</li>
+                <li>GitHub, Macbook, VSCode</li>
               </ul>
             </div>
           </div>

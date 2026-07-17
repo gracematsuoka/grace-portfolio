@@ -38,14 +38,15 @@
 :root {
   --radius: 0.75rem;
   /* Warm beige paper background */
-  --background: oklch(0.965 0.013 80);
+  --background: #f8f3ea;
   --foreground: oklch(0.22 0.02 260);
   --card: oklch(0.985 0.008 80);
   --card-foreground: oklch(0.22 0.02 260);
   --popover: oklch(0.99 0.005 80);
   --popover-foreground: oklch(0.22 0.02 260);
   /* Primary #3060B0 */
-  --primary: #DE6536;
+  --primary: #EA6735;
+  /* #DE6536; */
   --primary-foreground: oklch(0.99 0.005 80);
   --secondary: oklch(0.94 0.013 75);
   --secondary-foreground: oklch(0.22 0.02 260);
