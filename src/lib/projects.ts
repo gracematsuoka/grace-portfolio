@@ -1,16 +1,16 @@
-import havenCover from '../assets/project-media/sf/haven-cover.png';
-import sfMap from '../assets/project-media/sf/sf-map.mov';
-import sfChat from '../assets/project-media/sf/sf-chat.mov';
-import piqueCover from '../assets/project-media/pique/pique-cover.png';
-import aiStyling from '../assets/project-media/pique/ai-styling.mp4';
-import canvasEditor from '../assets/project-media/pique/canvas-editor-pique.mp4';
-import imgStorage from '../assets/project-media/pique/image-storage-pique.mp4';
-import piquePosts from '../assets/project-media/pique/posts-pique.mp4';
-import lcCover from '../assets/project-media/lc/lc-cover.png';
-import lcForm from '../assets/project-media/lc/lc-form.png';
-import lcResult from '../assets/project-media/lc/lc-result.png';
-import foundCover from '../assets/project-media/found/found-cover.png';
-import foundApp from '../assets/project-media/found/found-app.png';
+import havenCover from "../assets/project-media/sf/haven-cover.png";
+import sfMap from "../assets/project-media/sf/sf-map.mov";
+import sfChat from "../assets/project-media/sf/sf-chat.mov";
+import piqueCover from "../assets/project-media/pique/pique-cover.png";
+import aiStyling from "../assets/project-media/pique/ai-styling.mp4";
+import canvasEditor from "../assets/project-media/pique/canvas-editor-pique.mp4";
+import imgStorage from "../assets/project-media/pique/image-storage-pique.mp4";
+import piquePosts from "../assets/project-media/pique/posts-pique.mp4";
+import lcCover from "../assets/project-media/lc/lc-cover.png";
+import lcForm from "../assets/project-media/lc/lc-form.png";
+import lcResult from "../assets/project-media/lc/lc-result.png";
+import foundCover from "../assets/project-media/found/found-cover.png";
+import foundApp from "../assets/project-media/found/found-app.png";
 
 export type ProjectPlatform = "web" | "mobile" | "desktop" | "other";
 
@@ -73,7 +73,16 @@ export const projects: Project[] = [
       "The app combines an AI chatbot that gathers key details like age, gender, and language with a live map of nearby shelters and availability so users can move from intake to action faster.",
     ],
     image: havenCover,
-    stack: ["TypeScript", "Next.js", "Express.js", "Expo", "Mapbox", "Google Places", "OpenAI", "Bland.ai"],
+    stack: [
+      "TypeScript",
+      "Next.js",
+      "Express.js",
+      "Expo",
+      "Mapbox",
+      "Google Places",
+      "OpenAI",
+      "Bland.ai",
+    ],
     sections: [
       {
         heading: "The problem",
@@ -96,7 +105,7 @@ export const projects: Project[] = [
             media: sfChat,
             mediaType: "video",
             mediaSide: "right",
-            mediaAspect: "mobile"
+            mediaAspect: "mobile",
           },
           {
             heading: "Nearby shelter map",
@@ -106,7 +115,7 @@ export const projects: Project[] = [
             media: sfMap,
             mediaType: "video",
             mediaSide: "left",
-            mediaAspect: "mobile"
+            mediaAspect: "mobile",
           },
         ],
       },
@@ -141,32 +150,34 @@ export const projects: Project[] = [
           {
             heading: "AI styling",
             body: [
-              "Integrated generative AI styling, translating user prompts and wardrobe data into realistic outfit mockups with interactive outfit results allowing users to see outfit metadata right away.",
+              "Integrated generative AI styling via a RAG-based system (LangChain, LangGraph, Pinecone), translating user prompts and wardrobe data into realistic outfit mockups with interactive outfit results allowing users to see visually see outfit ideas right away.",
             ],
             media: aiStyling,
             mediaType: "video",
             mediaSide: "left",
-            mediaAspect: "desktop"
+            mediaAspect: "desktop",
           },
           {
             heading: "Image processing and storage",
             body: [
-              "• AI-powered image processing microservice (Rembg),", "• Implemented Jimp to detect and remove excess 'white-space' from images", "• Integrated Cloudflare Images for secure, performant image storage", "• Database of pre-processed images to easily add to closet/wishlist", "• Item organization with dynamic tagging and filtering system",
+              "• AI-powered image processing microservice (Rembg),",
+              "• Implemented Jimp to detect and remove excess 'white-space' from images",
+              "• Integrated Cloudflare Images for secure, performant image storage",
+              "• Database of pre-processed images to easily add to closet/wishlist",
+              "• Item organization with dynamic tagging and filtering system",
             ],
             media: imgStorage,
             mediaType: "video",
             mediaSide: "right",
-            mediaAspect: "desktop"
+            mediaAspect: "desktop",
           },
           {
             heading: "Canvas editor",
-            body: [
-              "Interactive canvas editor for users to create outfits using Fabric.js.",
-            ],
+            body: ["Interactive canvas editor for users to create outfits using Fabric.js."],
             media: canvasEditor,
             mediaType: "video",
             mediaSide: "left",
-            mediaAspect: "desktop"
+            mediaAspect: "desktop",
           },
           {
             heading: "Dynamic posts and saving",
@@ -176,7 +187,7 @@ export const projects: Project[] = [
             media: piquePosts,
             mediaType: "video",
             mediaSide: "right",
-            mediaAspect: "desktop"
+            mediaAspect: "desktop",
           },
         ],
       },
@@ -187,8 +198,7 @@ export const projects: Project[] = [
     title: "LifeCrash",
     tag: "Prediction Tool",
     year: "2025",
-    blurb:
-      'Using real user data to predict your next "life crash".',
+    blurb: 'Using real user data to predict your next "life crash".',
     description: [
       "LifeCrash uses a Random Forest Model to process past data sets regarding people's different life choices (education, career, etc.) with their life outcomes.",
     ],
@@ -210,7 +220,7 @@ export const projects: Project[] = [
             media: lcForm,
             mediaType: "image",
             mediaSide: "left",
-            mediaAspect: "desktop"
+            mediaAspect: "desktop",
           },
           {
             heading: "Accurate predication",
@@ -220,7 +230,7 @@ export const projects: Project[] = [
             media: lcResult,
             mediaType: "image",
             mediaSide: "right",
-            mediaAspect: "desktop"
+            mediaAspect: "desktop",
           },
         ],
       },
@@ -254,7 +264,7 @@ export const projects: Project[] = [
             media: foundApp,
             mediaType: "image",
             mediaSide: "left",
-            mediaAspect: "mobile"
+            mediaAspect: "mobile",
           },
         ],
       },
